@@ -1,0 +1,24 @@
+{% extends 'store/main.html' %}
+{% block content %}
+  <h1>Login</h1>
+
+  <form method="post" >
+    {% csrf_token %}
+    
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">username</label>
+          <input type="text"  class="form-control" name="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn btn-danger">Log in</button>
+
+        <a  class="text-danger text-center" href="{% url 'register' %}" >Register</a>
+      
+  </form>
+
+ 
+{% endblock content %}
